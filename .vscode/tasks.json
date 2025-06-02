@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build jpeg_parser",
+			"type": "shell",
+			"command": "gcc",
+			"args": [
+				"-g",
+				"jpeg_parser.c",
+				"-o",
+				"jpeg_parser"
+			],
+			"group": "build",
+			"problemMatcher": []
+		}
+	]
+}
