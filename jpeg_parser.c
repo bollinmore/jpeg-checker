@@ -57,7 +57,8 @@ void parse_app14_adobe(FILE *file, long offset, uint16_t length)
 		return;
 	}
 
-	fseek(file, 7, SEEK_CUR);
+        /* Skip version and flags (6 bytes) */
+        fseek(file, 6, SEEK_CUR);
 	uint8_t color_transform;
 	fread(&color_transform, 1, 1, file);
 	adobe_color_transform = color_transform;
@@ -72,7 +73,8 @@ void parse_app14_adobe(FILE *file, long offset, uint16_t length)
 	else
 		printf("Unknown\n");
 
-	fseek(file, length - 5 - 2 - 8, SEEK_CUR);
+        /* Skip remaining bytes after reading ColorTransform */
+        fseek(file, length - 5 - 2 - 7, SEEK_CUR);
 }
 
 void parse_jpeg_segments(FILE *file)

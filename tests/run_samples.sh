@@ -25,4 +25,4 @@ check_color_space() {
 }
 
 check_color_space images/rgb.jpeg "Possibly RGB"
-check_color_space images/cmyk.jpeg "Unknown 4-component"
+check_color_space images/cmyk.jpeg "CMYK"
